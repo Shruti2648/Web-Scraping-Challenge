@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+
+    <!--Latest Mars News-->
+    <div class="row" id="mars-news">
+      <div class="col-md-12">
+        <h3 class="heading">{{mars_html.news_title}}</h3>
+        <p>{{mars_html.news_p}}</p>
+      </div>
+    </div>
+
+    <!--Mars Image, Weather, and Facts-->
+    <div class="row" id="mars-facts">
+      <div class="col-md-8">
+        <h3 class="heading">Featured Mars Image</h3>
+        <img src={{mars_html.featured_image_url}} alt="Featured Mars Image">
+      </div>
+      <div class="col-md-4">
+        <h4 class="heading">Mars Weather</h4>
+        <p>{{mars_html.mars_weather}}</p>
+        <br>
+        <h4 class="heading">Mars Facts</h4>
+        <p>{{mars_html.facts_table_html | safe}}</p>
+      </div>
+    </div>
+
+    <!--Mars Hemispheres-->
+    <div class="row" id="mars-hemispheres-1">
+      <div class="col-md-6">
+        <h3 class="heading">Ceberus Hemisphere</h3>
+        <img src={{mars_html.cerberus_image_url}} alt="Cerberus Hemisphere">
+      </div>
+      <div class="col-md-6">
+        <h3 class="heading">Schiaparelli Hemisphere</h3>
+        <img src={{mars_html.schiaparelli_image_url}} alt="Schiaparelli Hemisphere">
+      </div>
+    </div>
+
+    <!--Mars Hemispheres-->
+    <div class="row" id="mars-hemispheres-1">
+      <div class="col-md-6">
+        <h3 class="heading">Syrtis Major Hemisphere</h3>
+        <img src={{mars_html.syrtis_major_image_url}} alt="Syrtis Major Hemisphere">
+      </div>
+      <div class="col-md-6">
+        <h3 class="heading">Valles Marineris Hemisphere</h3>
+        <img src={{mars_html.valles_marineris_image_url}} alt="Valles Marineris Hemisphere">
+      </div>
+    </div>
+
+    <br><br>
+  </div>
+</body>
+
+</html>
